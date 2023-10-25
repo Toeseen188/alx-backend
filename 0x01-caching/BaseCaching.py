@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env ptyhon3
 """ BaseCaching module
 """
 
