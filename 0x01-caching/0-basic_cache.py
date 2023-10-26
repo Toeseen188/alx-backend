@@ -2,8 +2,8 @@
 """ BAsic cache class """
 
 
-#BaseCaching = __import__('BaseCaching').BaseCaching
-from BaseCaching import BaseCaching
+BaseCaching = __import__('base_caching').BaseCaching
+#from BaseCaching import BaseCaching
 
 
 class BasicCache(BaseCaching):
