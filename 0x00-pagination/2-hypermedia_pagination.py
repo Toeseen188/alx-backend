@@ -57,10 +57,10 @@ class Server:
         mydict['page_size'] = len(dataset_page)
         mydict['page'] = page
         mydict['data'] = dataset_page
-        if page >= 1 or page_size >= 1:
-            if page_size < len(dataset_page):
-                next_page = page + 1
+        if page >= 1 and page_size >= 1:
+            if page_size <= len(dataset_page):
                 prev_page = page - 1
+                next_page = page + 1
             else:
                 next_page = None
             if page > 1:
@@ -68,6 +68,8 @@ class Server:
                 prev_page = page - 1
             else:
                 prev_page = None
+            if len(dataset_page) <= 0:
+                next_page = None
         mydict['next_page'] = next_page
         mydict['prev_page'] = prev_page
         mydict['total_pages'] = total_pages
