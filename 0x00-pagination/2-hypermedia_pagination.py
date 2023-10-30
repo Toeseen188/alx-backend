@@ -69,7 +69,7 @@ class Server:
 
             else:
                 prev_page = None
-            if page_size > len(dataset):
+            if page >= len(dataset):
                 next_page = None
         mydict['next_page'] = next_page
         mydict['prev_page'] = prev_page
