@@ -58,11 +58,11 @@ class Server:
         mydict['page'] = page
         mydict['data'] = dataset_page
         if page >= 1 and page_size >= 1:
-            if page_size <= len(dataset_page):
+            if len(dataset_page) > 0:
                 prev_page = page - 1
                 next_page = page + 1
             else:
-                next_page = None
+                prev_page = None
             if page > 1:
                 next_page = page + 1
                 prev_page = page - 1
