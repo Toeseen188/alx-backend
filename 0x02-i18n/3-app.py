@@ -20,7 +20,8 @@ def index():
 
 
 class Config:
-    """ this is configuration class to translate lang
+    """
+    this is configuration class to translate lang
     """
     LANGUAGES = ["en", "fr"]
 
@@ -32,6 +33,7 @@ app.config.from_object(Config)
 babel.init_app(app)
 
 
+@babel.localeselector
 def get_locale():
     """
     get the locale language using request
