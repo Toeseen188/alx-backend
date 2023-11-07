@@ -30,16 +30,16 @@ class Config:
 
 
 app.config.from_object(Config)
-babel.init_app(app)
 
 
-@babel.localeselector
 def get_locale():
     """
     get the locale language using request
     """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
+
+babel.init_app(app, locale_selector=get_locale)
 
 if __name__ == ('__main__'):
     app.run(debug=False)
