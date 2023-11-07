@@ -48,12 +48,11 @@ def get_locale():
             return lang
 
     # If no preferred language is found, resort to the default behavior
-    print("using the defaul lang")
     return app.config['BABEL_DEFAULT_LOCALE']
 
 
 babel.init_app(app, locale_selector=get_locale)
 
 
-if __name__ == '__main__':
+if __name__ == ('__main__'):
     app.run(debug=True)
