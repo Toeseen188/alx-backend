@@ -11,7 +11,7 @@ babel = Babel(app)
 
 
 @app.route('/')
-def index():
+def index() -> str:
     """
     index page
     """
@@ -32,7 +32,7 @@ class Config:
 app.config.from_object(Config)
 
 
-def get_locale():
+def get_locale() -> str:
     """
     get the locale language using request
     """
