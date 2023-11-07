@@ -4,6 +4,7 @@ Flask app
 """
 from flask import Flask, render_template, request
 from flask_babel import Babel, _
+from typing import List
 
 
 app = Flask(__name__)
@@ -23,10 +24,10 @@ class Config:
     """
     this is configuration class to translate lang
     """
-    LANGUAGES = ["en", "fr"]
+    LANGUAGES: List[str] = ["en", "fr"]
 
-    BABEL_DEFAULT_LOCALE = "en"
-    BABEL_DEFAULT_TIMEZONE = "UTC"
+    BABEL_DEFAULT_LOCALE: str = "en"
+    BABEL_DEFAULT_TIMEZONE: str = "UTC"
 
 
 app.config.from_object(Config)
