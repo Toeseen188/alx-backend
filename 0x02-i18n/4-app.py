@@ -33,7 +33,6 @@ app.config.from_object(Config)
 
 
 def get_locale():
-
     """
     get locale and set language using optional arguments
     """
