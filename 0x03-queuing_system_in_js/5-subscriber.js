@@ -14,9 +14,8 @@ subscriberClient.subscribe('holberton school channel');
 
 subscriberClient.on('message', (channel, message) => {
   console.log(message);
-  if (message == 'KILL_SERVER') {
+  if (message === 'KILL_SERVER') {
     subscriberClient.unsubscribe(channel);
     subscriberClient.quit();
   }
 });
-

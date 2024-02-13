@@ -1,5 +1,4 @@
 import redis from 'redis';
-import { promisify } from 'util';
 
 const client = redis.createClient();
 
@@ -13,7 +12,7 @@ client.on('error', (err) => {
 
 function setHash(hashName, key, value) {
   client.hset(hashName, key, value, (err, reply) => {
-    if(err) {
+    if (err) {
       console.error(err);
     } else {
       console.log(`Reply: ${reply}`);
@@ -24,7 +23,7 @@ function setHash(hashName, key, value) {
 function getAllHashValue(hashName) {
   client.hgetall(hashName, (err, reply) => {
     if (err) {
-     console.error(err);
+      console.error(err);
     } else {
       console.log(reply);
     }
@@ -37,11 +36,3 @@ setHash('HolbertonSchools', 'Bogota', '20');
 setHash('HolbertonSchools', 'Cali', '40');
 setHash('HolbertonSchools', 'Paris', '2');
 getAllHashValue('HolbertonSchools');
-
-
-
-
-
-
-
-
