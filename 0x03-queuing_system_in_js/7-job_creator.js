@@ -54,13 +54,13 @@ jobs.forEach((jobData) => {
     .on('enqueue', () => {
       console.log(`Notification job created: ${push_notification_code_2.id}`);
     })
-    .on('completed', () => {
+    .on('job complete', () => {
       console.log(`Notification job ${push_notification_code_2.id} completed`);
     })
-    .on('failed', (err) => {
+    .on('job failed', (err) => {
       console.error(`Notification job ${push_notification_code_2.id} failed: ${err}`);
     })
-    .on('progress', (progress) => {
+    .on('job progress', (progress) => {
       console.log(`Notification job ${push_notification_code_2.id} ${progress}% complete`);
     })
     .save((err) => {

@@ -12,11 +12,11 @@ push_notification_code.on('enqueue', () => {
   console.log(`Notification job created: ${push_notification_code.id}`);
 });
 
-push_notification_code.on('complete', () => {
+push_notification_code.on('job complete', () => {
   console.log('Notification job completed');
 });
 
-push_notification_code.on('failed', () => {
+push_notification_code.on('job failed', () => {
   console.error('Notification job failed');
 });
 
